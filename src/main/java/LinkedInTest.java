@@ -30,12 +30,17 @@ public class LinkedInTest extends BaseTest {
         loginPage.logIn(user);
     }
 
-    @Test(dependsOnMethods = "logIn")
-    private void fillDataBD() throws InterruptedException {
-        homePage = new HomePage(driver);
-        homePage.fillBrthdayData();
+//    @Test(dependsOnMethods = "logIn")
+//    private void fillDataBD() throws InterruptedException {
+//        homePage = new HomePage(driver);
+//        homePage.fillBrthdayData();
 
+    @Test(dependsOnMethods = "logIn")
+    private void goToMainPage() {
+        homePage = new HomePage(driver);
+        homePage.goToMain();
     }
+
 
     @AfterTest
     private void closeBrowser() {

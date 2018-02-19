@@ -23,8 +23,17 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = ".//*[@class='button-primary-small launchpad-add-full-profile-info__start-date-save']")
     private WebElement saveButton;
 
+    @FindBy(xpath = ".//*[@id='inbug-nav-item']")
+    private WebElement logo;
+
     public HomePage(WebDriver driver) {
         super(driver);
+    }
+
+    public void goToMain() {
+        waitForElementToBeClickable(logo);
+        Hihglighter.highlightElement(logo);
+        logo.click();
     }
 
     public void selectMonth() {
